@@ -298,4 +298,11 @@ Blockly.ZoomControls.prototype.createZoomResetSvg_ = function() {
     e.stopPropagation();  // Don't start a workspace scroll.
     e.preventDefault();  // Stop double-clicking from selecting text.
   });
+
+  Blockly.ZoomControls.prototype.resetZoom = function() {
+    var ws = this.workspace_;
+    ws.setScale(ws.options.zoomOptions.startScale);
+    ws.scrollCenter();
+  };
+  
 };
